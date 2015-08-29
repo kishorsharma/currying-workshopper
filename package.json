@@ -1,0 +1,20 @@
+{
+  "name": "currying-workshopper",
+  "version": "1.0.0",
+  "description": "Learn how to write a curry function in java and use it.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kishorsharma/currying-workshopper"
+  },
+  "license": "MIT",
+  "bin": "./currying-workshopper.js",
+  "dependencies": {
+    "path": "^0.11.14",
+    "workshopper": "^2.7.0",
+    "workshopper-exercise": "^2.4.0"
+  },
+  "bin": {
+    "currying": "./currying-workshopper.js"
+  },
+  "preferGlobal": true
+}
