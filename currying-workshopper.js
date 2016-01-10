@@ -11,5 +11,4 @@ function fpath (f) {
 workshopper({
       name        : 'curry'
     , appDir      : __dirname
-
-  })
+})
