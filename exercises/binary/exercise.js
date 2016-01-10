@@ -14,10 +14,6 @@ exercise.addSetup(function (mode, callback) {
 
     this.solutionModule = require(getSolutionPath() + 'solution.js');
     this.submissionModule = require([process.cwd(), this.args[0]].join('/'));
-    // console.log ("this.solutionModule", this.solutionModule);  //Solution provided by us
-    // console.log ("this.submissionModule", this.submissionModule);  // solution provided by the submitter
-    // console.log ("this.submissionArgs", this.submissionArgs);  // aregument for submitter solution
-    // console.log ("this.solutionArgs", this.solutionArgs);  // aregument for solution program
     process.nextTick(callback);
 });
 
@@ -59,7 +55,5 @@ exercise.getSolutionFiles = function (callback) {
 function getSolutionPath() {
     return path.join(exercise.dir, './solution/');
 }
-// compare stdout of solution and submission
-//exercise = comparestdout(exercise)
 
 module.exports = exercise
