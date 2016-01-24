@@ -1,6 +1,10 @@
 ## Good going!!
 
-Wow!! you have just created a very basic curry function. Isn't it amazing how simple it is. However delaying invocation for only second call will not gives advantage.
+Simple currying is good. However delaying invocation for only second call will not gives advantage. Also what if all argument are already with us in that case delaying invocation for second or subsequent call will be overhead. we want to call our function as:
+
+sum(3,4); // 7
+sum (3)(4); // 7
+
 To dive deep into this we first need to understand few function call such as:
 
 * call

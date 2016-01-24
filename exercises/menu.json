@@ -2,5 +2,6 @@
     "IDENTITY",
     "BINARY",
     "DELAY INVOCATION",
+    "LONG_DELAY_INVOCATION",
     "CALL"
 ]
