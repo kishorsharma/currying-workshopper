@@ -10,7 +10,7 @@ To dive deep into this we first need to understand few function call such as:
 * call
 * apply
 
-This exercise will focus on call.
+For this we have to create two method caller (for call) and applier (for apply).
 
 ## Task
 Write function which will invoked a method passed as argument in reference of object argument pass.
@@ -53,7 +53,12 @@ to proceed. Your program will be tested, a report will be generated, and the les
 
 ----------------------------------------------------------------------
 ## Boilerplate
-var caller = function (person, update, nameArg, ageArg, tShirtSizeArg) {
-  // your code here
+var callAndApply = {
+  caller: function (object, method, nameArg, ageArg, tShirtSizeArg) {
+    //your code
+  },
+  applier: function (object, method, argumentsArr) {
+    // your code
+  }
 };
-module.export = caller;
+module.exports = callAndApply;

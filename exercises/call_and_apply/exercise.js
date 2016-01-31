@@ -25,11 +25,21 @@ exercise.addProcessor(function (mode, callback) {
         this.age = age;
         this.tShirtSize = tShirtSize;
     };
-    var person = {name: "Brij", age: 28, tShirtSize: 'L'};
-    var solutionResult = this.solutionModule(person, update, 'Kishor', 29, 'XL');
-    var submissionResult = this.submissionModule(person, update, 'Kishor', 29, 'XL');
-    if (person.name !== 'Kishor' || person.age !== 29 || person.tShirtSize !== 'XL') {
-        exercise.emit('fail', 'Expected result: ' + solutionResult + ' \nActual result: '+ submissionResult);
+    var personForCall = {name: "Brij", age: 28, tShirtSize: 'L'};
+    var personForApply = {name: "Kishor", age: 24, tShirtSize: 'S'};
+    var callerSolutionResult = this.solutionModule.caller(personForCall, update, 'Kishor', 29, 'XL');
+    var callerSubmissionResult = this.submissionModule.caller(personForCall, update, 'Kishor', 29, 'XL');
+
+    var applierSolutionResult = this.solutionModule.applier(personForApply, update, ['Brij', 26, 'M']);
+    var applierSubmissionResult = this.submissionModule.applier(personForApply, update, ['Brij', 26, 'M']);
+
+    if (personForCall.name !== 'Kishor' || personForCall.age !== 29 || personForCall.tShirtSize !== 'XL') {
+        exercise.emit('fail', 'Call method result in error. \nExpected result: ' + callerSolutionResult + ' \nActual result: '+ callerSubmissionResult);
+        pass = false;
+    }
+
+    if (personForApply.name !== 'Brij' || personForApply.age !== 26 || personForApply.tShirtSize !== 'M') {
+        exercise.emit('fail', 'Apply method result in error. \nExpected result: ' + applierSolutionResult + ' \nActual result: '+ applierSubmissionResult);
         pass = false;
     }
     process.nextTick(function () {

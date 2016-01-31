@@ -3,5 +3,5 @@
     "BINARY",
     "DELAY INVOCATION",
     "LONG_DELAY_INVOCATION",
-    "CALL"
+    "CALL AND APPLY"
 ]
