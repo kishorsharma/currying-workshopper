@@ -1,3 +1,0 @@
-#!/usr/bin/env node
-
-require('../currying-workshopper').execute(process.argv.slice(2))
