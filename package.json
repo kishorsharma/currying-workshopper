@@ -16,7 +16,7 @@
     "workshopper-exercise": "^2.4.0"
   },
   "bin": {
-    "currying": "./currying-workshopper.js"
+    "currying": "./bin/currying"
   },
   "main": "./currying-workshopper.js",
   "preferGlobal": true
