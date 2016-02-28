@@ -10,5 +10,6 @@ function fpath (f) {
 
 workshopper({
       name        : 'curry'
+    , title    : 'Currying in JavaScript'
     , appDir      : __dirname
 })
