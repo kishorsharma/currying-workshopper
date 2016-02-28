@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Learn how to write a curry function in java and use it.",
   "title": "Currying in JavaScript",
+  "author": "Brij Kishor <brijkishor.cse@gmail.com> (https://github.com/kishorsharma)",
   "repository": {
     "type": "git",
     "url": "git@github.com:kishorsharma/currying-workshopper"
@@ -17,5 +18,6 @@
   "bin": {
     "currying": "./currying-workshopper.js"
   },
+  "main": "./currying-workshopper.js",
   "preferGlobal": true
 }
