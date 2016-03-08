@@ -27,8 +27,8 @@ exercise.addProcessor(function (mode, callback) {
     var addFunction = function (a,b,c,d) {
       return a+b+c+d;
     };
-    var solutionResult = this.solutionModule(addFunction)(inputArr[0])(inputArr[1])(inputArr[2])(inputArr[3]);
-    var submissionResult = this.submissionModule(addFunction)(inputArr[0])(inputArr[1])(inputArr[2])(inputArr[3]);
+    var solutionResult = this.solutionModule(addFunction)(inputArr[0],inputArr[1])(inputArr[2])(inputArr[3]);
+    var submissionResult = this.submissionModule(addFunction)(inputArr[0])(inputArr[1])(inputArr[2],inputArr[3]);
     if (solutionResult !== submissionResult) {
         exercise.emit('fail', 'Expected result: ' + solutionResult + ' \nActual result: '+ submissionResult);
         pass = false;

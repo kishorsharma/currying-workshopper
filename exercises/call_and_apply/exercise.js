@@ -25,20 +25,23 @@ exercise.addProcessor(function (mode, callback) {
         this.age = age;
         this.tShirtSize = tShirtSize;
     };
-    var personForCall = {name: "Brij", age: 28, tShirtSize: 'L'};
-    var personForApply = {name: "Kishor", age: 24, tShirtSize: 'S'};
-    var callerSolutionResult = this.solutionModule.caller(personForCall, update, 'Kishor', 29, 'XL');
-    var callerSubmissionResult = this.submissionModule.caller(personForCall, update, 'Kishor', 29, 'XL');
+    var personForSolutionCall = {name: "Brij", age: 28, tShirtSize: 'L'};
+    var personForSubmissionCall = {name: "Brij", age: 28, tShirtSize: 'L'};
+    
+    var callerSolutionResult = this.solutionModule.caller(personForSolutionCall, update, 'Kishor', 29, 'XL');
+    var callerSubmissionResult = this.submissionModule.caller(personForSubmissionCall, update, 'Kishor', 29, 'XL');
 
-    var applierSolutionResult = this.solutionModule.applier(personForApply, update, ['Brij', 26, 'M']);
-    var applierSubmissionResult = this.submissionModule.applier(personForApply, update, ['Brij', 26, 'M']);
-
-    if (personForCall.name !== 'Kishor' || personForCall.age !== 29 || personForCall.tShirtSize !== 'XL') {
-        exercise.emit('fail', 'Call method result in error. \nExpected result: ' + callerSolutionResult + ' \nActual result: '+ callerSubmissionResult);
+    if (personForSubmissionCall.name !== personForSolutionCall.name || personForSubmissionCall.age !== personForSolutionCall.age || personForSubmissionCall.tShirtSize !== personForSolutionCall.tShirtSize) {
+        exercise.emit('fail', 'Call method result in error. \nExpected result: ' + personForSolutionCall + ' \nActual result: '+ personForSubmissionCall);
         pass = false;
     }
 
-    if (personForApply.name !== 'Brij' || personForApply.age !== 26 || personForApply.tShirtSize !== 'M') {
+    var personForSolutionApply = {name: "Kishor", age: 24, tShirtSize: 'S'};
+    var personForSubmissionApply = {name: "Kishor", age: 24, tShirtSize: 'S'};
+    
+    var applierSolutionResult = this.solutionModule.applier(personForSolutionApply, update, ['Brij', 26, 'M']);
+    var applierSubmissionResult = this.submissionModule.applier(personForSubmissionApply, update, ['Brij', 26, 'M']);
+    if (personForSubmissionApply.name !== personForSolutionApply.name || personForSubmissionApply.age !== personForSolutionApply.age || personForSubmissionApply.tShirtSize !== personForSolutionApply.tShirtSize) {
         exercise.emit('fail', 'Apply method result in error. \nExpected result: ' + applierSolutionResult + ' \nActual result: '+ applierSubmissionResult);
         pass = false;
     }

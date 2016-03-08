@@ -3,7 +3,7 @@ var delayInvoc = function (a) {
   if (a === undefined) {
     var result = total;
     total = null;
-    return total;
+    return result;
   } else {
     total = total + a;
     return delayInvoc;
