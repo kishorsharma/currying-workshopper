@@ -14,10 +14,6 @@ exercise.addSetup(function (mode, callback) {
 
     this.solutionModule = require(getSolutionPath() + 'solution.js');
     this.submissionModule = require([process.cwd(), this.args[0]].join('/'));
-    // console.log ("this.solutionModule", this.solutionModule);  //Solution provided by us
-    // console.log ("this.submissionModule", this.submissionModule);  // solution provided by the submitter
-    // console.log ("this.submissionArgs", this.submissionArgs);  // aregument for submitter solution
-    // console.log ("this.solutionArgs", this.solutionArgs);  // aregument for solution program
     process.nextTick(callback);
 });
 
@@ -25,10 +21,7 @@ exercise.addSetup(function (mode, callback) {
 exercise.addProcessor(function (mode, callback) {
     var pass = true;
     var random = Math.random();
-    //  var idx = this.solutionModule(random);
     var idx = this.submissionModule(random);
-    console.log("idx: ", idx);
-    console.log("this.submissionModule: ", this.submissionModule);
     if (idx !== random) {
         exercise.emit('fail', 'this.ready was not set to true.');
         pass = false;
