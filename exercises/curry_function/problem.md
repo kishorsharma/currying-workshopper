@@ -9,7 +9,23 @@ What next?
 
 ##Task
 
-Now using knowledge we got we will create a function which will convert a function into a curried function.
+Now using knowledge we got we will create a function which will take another function as argument (any function which we want to be curried) and convert it into a curried function.
+For example:
+Let suppose we have a function:
+
+`function abc (a,b,c){
+}
+`
+
+I need to write a function let say `curryFunc` with which when we call:
+
+```
+var curriedAbc = curryFunc(abc);
+currienAbc(a)(b)(c); // Now we can call original function like this...
+currienAbc(a,b)(c); //or this
+currienAbc(a)b,c); //or this
+currienAbc(a,b,c); //or this
+```
 
 ----------------------------------------------------------------------
 ## HINTS
