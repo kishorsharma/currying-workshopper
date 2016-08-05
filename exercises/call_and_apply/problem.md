@@ -25,11 +25,15 @@ var update = function(name, age, tShirtSize){
 
 and a person object:
 
-var person = {name: 'Kishor', 28, 'L' };
+var person = {name: 'Kishor', age: 28, tShirtSize: 'L' };
 
 you need to provide implimentation of method:
 
-var caller = function (person, update, 'Sharma', 29, 'XL') {
+var caller = function (person, 
+                      update, 
+                      name, //'Sharma' 
+                      age, // 29
+                      tShirtSize, // 'XL') {
   // your code here
 };
 
