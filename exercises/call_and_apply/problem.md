@@ -1,19 +1,19 @@
 ## Good going!!
 
-Simple currying is good. However delaying invocation for only second call will not gives advantage. Also what if all argument are already with us in that case delaying invocation for second or subsequent call will be overhead. we want to call our function as:
+Simple currying is good. However delaying invocation for only the second call is not extremely advantageous. Also, if all argument are already provided, then delaying invocation for second or subsequent calls will be unnecessary overhead. We want to call our function as:
 
 sum(3,4); // 7
 sum (3)(4); // 7
 
-To dive deep into this we first need to understand few function call such as:
+To dive deep into this we first need to understand the following functions:
 
 * call
 * apply
 
-For this we have to create two method caller (for call) and applier (for apply).
+For this we have to create two methods, caller (for call) and applier (for apply).
 
 ## Task
-Write function which will invoked a method passed as argument in reference of object argument pass.
+Write a function which will accept a method, an object, and additonal parameters. Then invoke the method on the object passing the parameters.
 
 Suppose we have a method:
 
@@ -27,7 +27,7 @@ and a person object:
 
 var person = {name: 'Kishor', age: 28, tShirtSize: 'L' };
 
-you need to provide implimentation of method:
+you need to provide implimentation of the method:
 
 var caller = function (person, 
                       update, 
@@ -44,8 +44,11 @@ console.log(person) // => person.name = Sharma, person.age = 29 and person.tShir
 
 The call() method is inherited from Function.prototype. It calls a function with a given 'this' value and arguments provided individually.
 
-To know more about concept used follow:
+To know more about call:
 https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Function/call
+
+To know more about apply:
+https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
 
 
 When you are done, you must run:
