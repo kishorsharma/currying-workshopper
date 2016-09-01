@@ -1,25 +1,30 @@
 ## Recap
-Great, If you reached so far you have learned following:
 
-* What are Clousure? What are their advantages and how to use them?
+Great, if you've made it this far you have learned following:
+
+* Closures, their advantages and how to use them.
 * Function call and apply.
-* And also made a basic curry function to add.
+* How to make a basic curry function that adds.
 
-What next?
+What's next?
 
-##Task
+## Task
 
-Now using knowledge we got we will create a function which will take another function as argument (any function which we want to be curried) and convert it into a curried function.
-For example:
-Let suppose we have a function:
+Now, using this knowledge, we will create a function that will take another
+function as argument (any function that we want to be curried) and convert it
+into a curried function.
 
-`function abc (a,b,c){
+For example, suppose we have a function:
+
+```js
+function abc(a,b,c) {
 }
-`
-
-I need to write a function let say `curryFunc` with which when we call:
-
 ```
+
+You need to write a function that curries that function, so it can be used as
+follows:
+
+```js
 var curriedAbc = curryFunc(abc);
 currienAbc(a)(b)(c); // Now we can call original function like this...
 currienAbc(a,b)(c); //or this
@@ -30,18 +35,20 @@ currienAbc(a,b,c); //or this
 ----------------------------------------------------------------------
 ## HINTS
 
-Implementation is taken from Article written by Alex Cruikshank:
+Implementation is taken from an article written by Alex Cruikshank:
 http://blog.carbonfive.com/2015/01/14/gettin-freaky-functional-wcurried-javascript/
 
-I will request to visit the article after giving some effort to figure out a solution or at least spend a decent time for solution.
+I suggest you wait to read the article until you put some significant effort
+into figuring out a solution.
 
-I want to thank Mr. Alex for such a good article.
+Special thanks to Mr. Cruikshank for such a good article.
 
 When you are done, you must run:
 ```sh
 $ {appname} verify program.js
 ```
 
-to proceed. Your program will be tested, a report will be generated, and the lesson will be marked 'completed' if you are successful.
+to proceed. Your program will be tested, a report will be generated, and the
+lesson will be marked 'completed' if you are successful.
 
 ----------------------------------------------------------------------
