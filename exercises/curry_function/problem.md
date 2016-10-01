@@ -26,10 +26,10 @@ follows:
 
 ```js
 var curriedAbc = curryFunc(abc);
-currienAbc(a)(b)(c); // Now we can call original function like this...
-currienAbc(a,b)(c); //or this
-currienAbc(a)b,c); //or this
-currienAbc(a,b,c); //or this
+curriedAbc(a)(b)(c); // Now we can call original function like this...
+curriedAbc(a,b)(c); //or this
+curriedAbc(a)(b,c); //or this
+curriedAbc(a,b,c); //or this
 ```
 
 ----------------------------------------------------------------------

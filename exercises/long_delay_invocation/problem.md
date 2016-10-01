@@ -6,7 +6,7 @@ simple it is? Let's make it a little more complex. Are you ready?
 ## Task
 
 Write a function that takes one argument for each invocation. Each time it is
-called, it should add its argument to a running total. If it is called with no
+called, it should add its argument to a running total and return itself. If it is called with no
 arguments, it should return the sum of all the arguments passed.
 
 ----------------------------------------------------------------------
