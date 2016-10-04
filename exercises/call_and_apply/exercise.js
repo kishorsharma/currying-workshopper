@@ -30,8 +30,9 @@ exercise.addProcessor(function (mode, callback) {
     var personForSolutionCall = {name: "Brij", age: 28, tShirtSize: 'L'};
     var personForSubmissionCall = {name: "Brij", age: 28, tShirtSize: 'L'};
     
-    var callerSolutionResult = this.solutionModule.caller(personForSolutionCall, update, 'Kishor', 29, 'XL');
-    var callerSubmissionResult = this.submissionModule.caller(personForSubmissionCall, update, 'Kishor', 29, 'XL');
+    // invoke `update` and mutate the test subjects
+    this.solutionModule.caller(personForSolutionCall, update, 'Kishor', 29, 'XL');
+    this.submissionModule.caller(personForSubmissionCall, update, 'Kishor', 29, 'XL');
 
     if (personForSubmissionCall.name !== personForSolutionCall.name || personForSubmissionCall.age !== personForSolutionCall.age || personForSubmissionCall.tShirtSize !== personForSolutionCall.tShirtSize) {
         exercise.emit('fail', 'Call method result in error. \nExpected result: ' + showObjectInLog(personForSolutionCall) + ' \nActual result: '+ showObjectInLog(personForSubmissionCall));
@@ -41,8 +42,10 @@ exercise.addProcessor(function (mode, callback) {
     var personForSolutionApply = {name: "Kishor", age: 24, tShirtSize: 'S'};
     var personForSubmissionApply = {name: "Kishor", age: 24, tShirtSize: 'S'};
     
-    var applierSolutionResult = this.solutionModule.applier(personForSolutionApply, update, ['Brij', 26, 'M']);
-    var applierSubmissionResult = this.submissionModule.applier(personForSubmissionApply, update, ['Brij', 26, 'M']);
+    // invoke `update` and mutate the test subjects
+    this.solutionModule.applier(personForSolutionApply, update, ['Brij', 26, 'M']);
+    this.submissionModule.applier(personForSubmissionApply, update, ['Brij', 26, 'M']);
+
     if (personForSubmissionApply.name !== personForSolutionApply.name || personForSubmissionApply.age !== personForSolutionApply.age || personForSubmissionApply.tShirtSize !== personForSolutionApply.tShirtSize) {
         exercise.emit('fail', 'Apply method result in error. \nExpected result: ' + showObjectInLog(personForSolutionApply) + ' \nActual result: '+ showObjectInLog(personForSubmissionApply));
         pass = false;
