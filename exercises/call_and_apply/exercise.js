@@ -4,6 +4,7 @@ var exercise      = require('workshopper-exercise')()
   , comparestdout = require('workshopper-exercise/comparestdout')
   , path          = require('path')
   , fs = require('fs')
+  , util = require('util')
 
 
 // checks that the submission file actually exists
@@ -25,6 +26,7 @@ exercise.addProcessor(function (mode, callback) {
         this.age = age;
         this.tShirtSize = tShirtSize;
     };
+
     var personForSolutionCall = {name: "Brij", age: 28, tShirtSize: 'L'};
     var personForSubmissionCall = {name: "Brij", age: 28, tShirtSize: 'L'};
     
@@ -32,7 +34,7 @@ exercise.addProcessor(function (mode, callback) {
     var callerSubmissionResult = this.submissionModule.caller(personForSubmissionCall, update, 'Kishor', 29, 'XL');
 
     if (personForSubmissionCall.name !== personForSolutionCall.name || personForSubmissionCall.age !== personForSolutionCall.age || personForSubmissionCall.tShirtSize !== personForSolutionCall.tShirtSize) {
-        exercise.emit('fail', 'Call method result in error. \nExpected result: ' + personForSolutionCall + ' \nActual result: '+ personForSubmissionCall);
+        exercise.emit('fail', 'Call method result in error. \nExpected result: ' + showObjectInLog(personForSolutionCall) + ' \nActual result: '+ showObjectInLog(personForSubmissionCall));
         pass = false;
     }
 
@@ -42,7 +44,7 @@ exercise.addProcessor(function (mode, callback) {
     var applierSolutionResult = this.solutionModule.applier(personForSolutionApply, update, ['Brij', 26, 'M']);
     var applierSubmissionResult = this.submissionModule.applier(personForSubmissionApply, update, ['Brij', 26, 'M']);
     if (personForSubmissionApply.name !== personForSolutionApply.name || personForSubmissionApply.age !== personForSolutionApply.age || personForSubmissionApply.tShirtSize !== personForSolutionApply.tShirtSize) {
-        exercise.emit('fail', 'Apply method result in error. \nExpected result: ' + applierSolutionResult + ' \nActual result: '+ applierSubmissionResult);
+        exercise.emit('fail', 'Apply method result in error. \nExpected result: ' + showObjectInLog(personForSolutionApply) + ' \nActual result: '+ showObjectInLog(personForSubmissionApply));
         pass = false;
     }
     process.nextTick(function () {
@@ -71,6 +73,12 @@ exercise.getSolutionFiles = function (callback) {
 
 function getSolutionPath() {
     return path.join(exercise.dir, './solution/');
+}
+
+// Print out an object's key value pairs when that object is used in `console.log`.
+// Normally, would output: `[object Object]`.
+function showObjectInLog(obj) {
+    return util.inspect(obj);
 }
 
 module.exports = exercise
