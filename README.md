@@ -10,12 +10,12 @@
 
 ## Why Currying
 
+The goal of this workshop is to learn concept and create a function to apply curry in JavaScript.
+
 Currying is the technique of translating the evaluation of a function that takes multiple arguments (or a tuple of arguments) into evaluating a sequence of functions, each with a single argument.
-The the number of arguments or operands that the function takes is also known as arity /ˈærᵻti/ of a function.
+The number of arguments or operands that the function takes is also known as arity /ˈærᵻti/ of a function.
 
-JavaScript has functional capabilities, but currying isn’t built in by default (at least not till time of writting.. :)).
-
-The goal of this workshop is to learn concept and create function to apply curry in JavaScript.
+JavaScript has functional capabilities, but currying isn’t built in by default (at least not till the time of writing.. :)).
 
 ## Installation & Update
 
